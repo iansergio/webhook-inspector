@@ -5,7 +5,7 @@ import {
 	jsonSchemaTransform,
 	type ZodTypeProvider,
 } from 'fastify-type-provider-zod'
-import { fastifySwagger} from '@fastify/swagger'
+import { fastifySwagger } from '@fastify/swagger'
 import { fastifyCors } from '@fastify/cors'
 import ScalarApiReference from '@scalar/fastify-api-reference'
 import { env } from './env'
@@ -30,14 +30,14 @@ app.register(fastifySwagger, {
 		info: {
 			title: 'Webhook Inspector API',
 			description: 'API for capturing and inspecting webhooks',
-			version: '1.0.0'
+			version: '1.0.0',
 		},
 	},
-	transform: jsonSchemaTransform
+	transform: jsonSchemaTransform,
 })
 
 app.register(ScalarApiReference, {
-	routePrefix: '/docs'
+	routePrefix: '/docs',
 })
 
 app.register(listWebhooks)
